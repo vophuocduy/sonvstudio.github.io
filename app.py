@@ -77,3 +77,8 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
+@app.route("/")
+@login_required
+def index():
+    return render_template("index.html")
+
