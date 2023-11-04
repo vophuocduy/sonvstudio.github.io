@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Đăng Nhập
+{% endblock %}
+
+{% block main %}
+    {% if message %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{ message }}!</strong> You can now login.
+        </div>
+    {% endif %}
+    <form action="/login" method="post">
+        <div class="form-floating mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto" id="floatingInput" name="username" placeholder="Tài khoản" type="text">
+            <label for="floatingInput">Tài khoản</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control mx-auto" id="floatingPassword" name="password" placeholder="Mật khẩu" type="password">
+            <label for="floatingPassword">Mật khẩu</label>
+        </div>
+        <button class="btn btn-outline-danger" type="submit">Đăng nhập</button>
+    </form>
+{% endblock %}
